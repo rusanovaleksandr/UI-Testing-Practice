@@ -41,11 +41,10 @@ public class ArticlePage extends BasePage {
     }
 
     public boolean hasEnglishVersion() {
-        scrollToFooter();
         return englishButton.isDisplayed(Duration.ofSeconds(3));
     }
     
-    private void scrollToFooter() {
+    public void scrollToFooter() {
         windowManager.scrollToFooter();
     }
 

@@ -36,6 +36,7 @@ public class FindArticlesTest extends BaseTest {
         for (int i = 0; i < MAX_ATTEMPTS; i++) {
             if (!conditions.containsValue(false)) break;
             ArticlePage article = mainPage.openRandomArticle();
+            article.scrollToFooter();
             checkAndUpdateCondition(conditions, article, TEST_HAS_IMAGE, article.hasImages());
             checkAndUpdateCondition(conditions, article, TEST_SHORT_URL, article.hasShortUrlOption());
             checkAndUpdateCondition(conditions, article, TEST_HAS_TITLE,true);
