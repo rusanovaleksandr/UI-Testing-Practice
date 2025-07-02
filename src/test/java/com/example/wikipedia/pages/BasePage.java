@@ -18,12 +18,14 @@ public abstract class BasePage {
     public BasePage() {
     }
 
-    public void open() {
+    public BasePage open() {
         Selenide.open(url);
+        return this;
     }
 
-    public void open(String given_url) {
+    public BasePage open(String given_url) {
         Selenide.open(given_url);
+        return this;
     }
 
     public String getTitle() {
