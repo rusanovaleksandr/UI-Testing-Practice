@@ -1,4 +1,4 @@
-package com.example.wikipedia.core;
+package com.example.wikipedia.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.example.wikipedia.services.WindowManager;

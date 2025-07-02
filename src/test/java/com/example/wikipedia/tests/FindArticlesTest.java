@@ -7,7 +7,6 @@ import com.example.wikipedia.services.TestResults;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.wikipedia.core.BaseTest;
 import com.example.wikipedia.pages.*;
 
 

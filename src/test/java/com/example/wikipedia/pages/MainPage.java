@@ -1,6 +1,5 @@
 package com.example.wikipedia.pages;
 
-import com.example.wikipedia.core.BasePage;
 import com.example.wikipedia.elements.RandomPageButton;
 import com.example.wikipedia.elements.SearchElement;
 

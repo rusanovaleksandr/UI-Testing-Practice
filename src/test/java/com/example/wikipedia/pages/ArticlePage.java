@@ -1,6 +1,5 @@
 package com.example.wikipedia.pages;
 
-import com.example.wikipedia.core.BasePage;
 import com.example.wikipedia.elements.CiteButton;
 import com.example.wikipedia.elements.LanguageSwitchButton;
 import com.example.wikipedia.elements.NotesSection;

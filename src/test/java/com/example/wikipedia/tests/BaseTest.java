@@ -1,4 +1,4 @@
-package com.example.wikipedia.core;
+package com.example.wikipedia.tests;
 
 import org.junit.jupiter.api.BeforeAll;
 import com.codeborne.selenide.Configuration;

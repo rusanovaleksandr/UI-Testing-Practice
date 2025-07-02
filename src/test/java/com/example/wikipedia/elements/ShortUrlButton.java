@@ -2,8 +2,6 @@ package com.example.wikipedia.elements;
 
 import static com.codeborne.selenide.Selenide.$;
 
-import com.example.wikipedia.core.BaseElement;
-
 public class ShortUrlButton extends BaseElement {
     public ShortUrlButton() {
         super("#t-urlshortener");

@@ -1,6 +1,5 @@
 package com.example.wikipedia.elements;
 
-import com.example.wikipedia.core.BaseElement;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class ArticleImagesElement extends BaseElement {

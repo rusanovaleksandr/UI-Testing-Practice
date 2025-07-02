@@ -1,4 +1,4 @@
-package com.example.wikipedia.core;
+package com.example.wikipedia.elements;
 
 import static com.codeborne.selenide.Selenide.$;
 import com.codeborne.selenide.SelenideElement;

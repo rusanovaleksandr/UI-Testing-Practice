@@ -1,6 +1,5 @@
 package com.example.wikipedia.tests;
 
-import com.example.wikipedia.core.BaseTest;
 import com.example.wikipedia.pages.ArticlePage;
 import com.example.wikipedia.pages.MainPage;
 import org.junit.jupiter.api.Test;
