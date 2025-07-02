@@ -20,17 +20,11 @@ public class ArticlePage extends BasePage {
     private final ShortUrlButton shortUrlButton = ShortUrlButton.byDefault();
     private final ReferencesSection referencesSection = ReferencesSection.byDefault();
     private final NotesSection notesSection = NotesSection.byDefault();
-    CiteButton citeButton = CiteButton.byDefault();
+    private final CiteButton citeButton = CiteButton.byDefault();
+    private final ArticleImagesElement imagesElement = ArticleImagesElement.byDefault();
 
     public String getArticleTitle() {
         return titleElement.getText();
-    }
-
-    public ArticlePage openShortUrlInNewTab(String url) {
-        windowManager.openInNewTab(url);
-        windowManager.switchToTab(1);
-        titleElement.isDisplayed(Duration.ofSeconds(3));
-        return new ArticlePage();
     }
 
     public String getShortUrl(){
@@ -39,7 +33,6 @@ public class ArticlePage extends BasePage {
     }
 
     public boolean hasImages() {
-        ArticleImagesElement imagesElement = ArticleImagesElement.byDefault();
         return imagesElement.hasImages();
     }
 
