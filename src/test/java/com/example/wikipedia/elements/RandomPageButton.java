@@ -1,7 +1,7 @@
 package com.example.wikipedia.elements;
 
 public class RandomPageButton extends BaseElement {
-    private static final String DEFAULT_CSS_SELECTOR = "#Примечания";
+    private static final String DEFAULT_CSS_SELECTOR = "#n-randompage";
 
     public RandomPageButton(String selector) {
         super(selector);

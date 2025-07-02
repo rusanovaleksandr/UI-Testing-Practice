@@ -27,8 +27,12 @@ public class ArticlePage extends BasePage {
         return titleElement.getText();
     }
 
-    public String getShortUrl(){
+    public void openShortUrlDialogWindow()
+    {
         shortUrlButton.clickAndOpenDialog();
+    }
+
+    public String getShortUrlFromDialogWindow(){
         return shortUrlButton.getShortUrlFromDialog();
     }
 

@@ -15,7 +15,8 @@ public class ShortUrlGenerationTest extends BaseTest {
         assertNotNull(articleName, "Не удалось загрузить название статьи из тестовых данных");
         ArticlePage articlePage = mainPage.openArticle(articleName);
         String originalTitle = articlePage.getArticleTitle();
-        String shortUrl = articlePage.getShortUrl();
+        articlePage.openShortUrlDialogWindow();
+        String shortUrl = articlePage.getShortUrlFromDialogWindow();
         assertTrue(shortUrl.startsWith("https://w.wiki/"), 
             "Сгенерированный URL должен начинаться с https://w.wiki/");
         articlePage.open(shortUrl);
