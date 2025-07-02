@@ -1,14 +1,15 @@
 package com.example.wikipedia.pages;
 
+import java.time.Duration;
+
+import com.example.wikipedia.elements.ArticleImagesElement;
+import com.example.wikipedia.elements.ArticleTitleElement;
 import com.example.wikipedia.elements.CiteButton;
 import com.example.wikipedia.elements.LanguageSwitchButton;
 import com.example.wikipedia.elements.NotesSection;
 import com.example.wikipedia.elements.PdfDownloadButton;
 import com.example.wikipedia.elements.ReferencesSection;
 import com.example.wikipedia.elements.ShortUrlButton;
-import com.example.wikipedia.elements.ArticleTitleElement;
-import com.example.wikipedia.elements.ArticleImagesElement;
-import java.time.Duration;
 
 
 
@@ -19,6 +20,7 @@ public class ArticlePage extends BasePage {
     private final ShortUrlButton shortUrlButton = ShortUrlButton.byDefault();
     private final ReferencesSection referencesSection = ReferencesSection.byDefault();
     private final NotesSection notesSection = NotesSection.byDefault();
+    CiteButton citeButton = CiteButton.byDefault();
 
     public String getArticleTitle() {
         return titleElement.getText();
@@ -55,7 +57,6 @@ public class ArticlePage extends BasePage {
     }
 
     public boolean hasCiteOption() {
-        CiteButton citeButton = CiteButton.byDefault();
         return citeButton.isAvailable();
     }
 
