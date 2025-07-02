@@ -8,21 +8,17 @@ import com.example.wikipedia.elements.ReferencesSection;
 import com.example.wikipedia.elements.ShortUrlButton;
 import com.example.wikipedia.elements.ArticleTitleElement;
 import com.example.wikipedia.elements.ArticleImagesElement;
-import static com.codeborne.selenide.Selenide.*;
 import java.time.Duration;
 
-import org.openqa.selenium.Keys;
 
 
 public class ArticlePage extends BasePage {
-    private final ArticleTitleElement titleElement = new ArticleTitleElement();
-    private final ArticleImagesElement imagesElement = new ArticleImagesElement();
-    private final LanguageSwitchButton englishButton = new LanguageSwitchButton();
-    private final PdfDownloadButton pdfButton = new PdfDownloadButton();
-    private final CiteButton citeButton = new CiteButton();
-    private final ShortUrlButton shortUrlButton = new ShortUrlButton();
-    private final ReferencesSection referencesSection = new ReferencesSection();
-    private final NotesSection notesSection = new NotesSection();
+    private final ArticleTitleElement titleElement = ArticleTitleElement.byDefault();
+    private final LanguageSwitchButton englishButton = LanguageSwitchButton.byDefault();
+    private final PdfDownloadButton pdfButton = PdfDownloadButton.byDefault();
+    private final ShortUrlButton shortUrlButton = ShortUrlButton.byDefault();
+    private final ReferencesSection referencesSection = ReferencesSection.byDefault();
+    private final NotesSection notesSection = NotesSection.byDefault();
 
     public String getArticleTitle() {
         return titleElement.getText();
@@ -32,17 +28,7 @@ public class ArticlePage extends BasePage {
         windowManager.openInNewTab(url);
         windowManager.switchToTab(1);
         titleElement.isDisplayed(Duration.ofSeconds(3));
-        
         return new ArticlePage();
-    }
-    
-    public void closeCurrentTabAndSwitchToOriginal() {
-        windowManager.closeCurrentTab();
-        windowManager.switchToTab(0);
-    }
-
-    public void closeShortUrlDialog() {
-        actions().sendKeys(Keys.ESCAPE).perform();
     }
 
     public String getShortUrl(){
@@ -51,6 +37,7 @@ public class ArticlePage extends BasePage {
     }
 
     public boolean hasImages() {
+        ArticleImagesElement imagesElement = ArticleImagesElement.byDefault();
         return imagesElement.hasImages();
     }
 
@@ -68,6 +55,7 @@ public class ArticlePage extends BasePage {
     }
 
     public boolean hasCiteOption() {
+        CiteButton citeButton = CiteButton.byDefault();
         return citeButton.isAvailable();
     }
 

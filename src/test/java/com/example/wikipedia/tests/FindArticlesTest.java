@@ -15,8 +15,6 @@ public class FindArticlesTest extends BaseTest {
     
     @Test
     void findArticlesWithConditions() {
-        MainPage mainPage = new MainPage();
-        mainPage.open();
         
         Map<String, Boolean> conditions = new HashMap<>() {{
             put("test4_has_image", false);

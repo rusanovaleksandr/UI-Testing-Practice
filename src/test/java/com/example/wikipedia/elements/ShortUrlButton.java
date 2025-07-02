@@ -3,8 +3,10 @@ package com.example.wikipedia.elements;
 import static com.codeborne.selenide.Selenide.$;
 
 public class ShortUrlButton extends BaseElement {
-    public ShortUrlButton() {
-        super("#t-urlshortener");
+    private static final String DEFAULT_CSS_SELECTOR = "#t-urlshortener";
+
+    public ShortUrlButton(String selector) {
+        super(selector);
     }
     
     public boolean isAvailable() {
@@ -17,5 +19,9 @@ public class ShortUrlButton extends BaseElement {
 
     public String getShortUrlFromDialog() {
         return $(".oo-ui-inputWidget-input").getAttribute("value");
+    }
+
+    public static ShortUrlButton byDefault() {
+        return new ShortUrlButton(DEFAULT_CSS_SELECTOR);
     }
 }

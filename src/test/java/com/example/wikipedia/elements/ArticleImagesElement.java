@@ -3,9 +3,10 @@ package com.example.wikipedia.elements;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class ArticleImagesElement extends BaseElement {
-    
-    public ArticleImagesElement() {
-        super("img");
+    private static final String DEFAULT_CSS_SELECTOR = "img";
+
+    public ArticleImagesElement(String selector) {
+        super(selector);
     }
     
     public boolean hasImages() {
@@ -14,5 +15,9 @@ public class ArticleImagesElement extends BaseElement {
     
     public int getImagesCount() {
         return $$(".infobox img, .thumbimage").size();
+    }
+
+    public static ArticleImagesElement byDefault(){
+        return new ArticleImagesElement(DEFAULT_CSS_SELECTOR);
     }
 }

@@ -22,6 +22,10 @@ public abstract class BasePage {
         Selenide.open(url);
     }
 
+    public void open(String given_url) {
+        Selenide.open(given_url);
+    }
+
     public String getTitle() {
         return title();
     }
