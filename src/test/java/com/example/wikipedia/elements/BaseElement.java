@@ -23,6 +23,10 @@ public abstract class BaseElement {
         }
     }
 
+    public boolean exists(){
+        return element.exists();
+    }
+
     public boolean isDisplayed(Duration timeout) {
         try {
             element.shouldBe(visible, timeout);

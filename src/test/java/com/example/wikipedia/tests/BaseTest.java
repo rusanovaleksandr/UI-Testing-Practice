@@ -5,11 +5,13 @@ import org.junit.jupiter.api.BeforeEach;
 
 import com.codeborne.selenide.Configuration;
 import com.example.wikipedia.pages.MainPage;
+import com.example.wikipedia.services.AuthService;
 
 public class BaseTest {
-    protected final MainPage mainPage = MainPage.byDefault();
+    protected MainPage mainPage; 
+
     @BeforeAll
-    public static void setup() {
+    static void setup() {
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
         Configuration.timeout = 10000;
@@ -18,7 +20,7 @@ public class BaseTest {
     }
 
     @BeforeEach
-    public void openMainPage() {
-        mainPage.open(); // Открываем главную страницу перед каждым тестом
+    void auth() {
+        mainPage = AuthService.login();// Авторизация перед каждым тестом
     }
 }
