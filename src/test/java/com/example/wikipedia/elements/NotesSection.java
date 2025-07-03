@@ -7,10 +7,6 @@ public class NotesSection extends BaseElement {
         super(selector);
     }
     
-    public boolean exists() {
-        return element.exists();
-    }
-
     public static NotesSection byDefault() {
         return new NotesSection(DEFAULT_CSS_SELECTOR);
     }
