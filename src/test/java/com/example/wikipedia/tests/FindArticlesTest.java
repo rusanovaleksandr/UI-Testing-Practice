@@ -11,6 +11,7 @@ import com.example.wikipedia.services.TestResults;
 
 public class FindArticlesTest extends BaseTest {
     private static final int MAX_ATTEMPTS = 10;
+    private static final String TEST_HAS_FOLLOW = "test2_has_follow";
     private static final String TEST_HAS_IMAGE = "test4_has_image";
     private static final String TEST_SHORT_URL = "test5_short_url";
     private static final String TEST_HAS_TITLE = "test6_has_title";
@@ -23,6 +24,7 @@ public class FindArticlesTest extends BaseTest {
     @Test
     void findArticlesWithConditions() {
         Map<String, Boolean> conditions = new HashMap<>() {{
+            put(TEST_HAS_FOLLOW, false);
             put(TEST_HAS_IMAGE, false);
             put(TEST_SHORT_URL, false);
             put(TEST_HAS_TITLE, false);
@@ -37,6 +39,7 @@ public class FindArticlesTest extends BaseTest {
             if (!conditions.containsValue(false)) break;
             ArticlePage article = mainPage.openRandomArticle();
             article.scrollToFooter();
+            checkAndUpdateCondition(conditions, article, TEST_HAS_FOLLOW, article.hasFollowButton());
             checkAndUpdateCondition(conditions, article, TEST_HAS_IMAGE, article.hasImages());
             checkAndUpdateCondition(conditions, article, TEST_SHORT_URL, article.hasShortUrlOption());
             checkAndUpdateCondition(conditions, article, TEST_HAS_TITLE,true);

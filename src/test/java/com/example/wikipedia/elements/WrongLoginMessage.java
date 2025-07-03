@@ -15,8 +15,6 @@ public class WrongLoginMessage extends BaseElement {
             .trim();
     }
 
-
-
     public static WrongLoginMessage byDefault(){
         return new WrongLoginMessage(DEFAULT_CSS_SELECTOR);
     }

@@ -5,13 +5,12 @@ import java.time.Duration;
 import com.example.wikipedia.elements.ArticleImagesElement;
 import com.example.wikipedia.elements.ArticleTitleElement;
 import com.example.wikipedia.elements.CiteButton;
+import com.example.wikipedia.elements.FollowButton;
 import com.example.wikipedia.elements.LanguageSwitchButton;
 import com.example.wikipedia.elements.NotesSection;
 import com.example.wikipedia.elements.PdfDownloadButton;
 import com.example.wikipedia.elements.ReferencesSection;
 import com.example.wikipedia.elements.ShortUrlButton;
-
-
 
 public class ArticlePage extends BasePage {
     private final ArticleTitleElement titleElement = ArticleTitleElement.byDefault();
@@ -22,6 +21,7 @@ public class ArticlePage extends BasePage {
     private final NotesSection notesSection = NotesSection.byDefault();
     private final CiteButton citeButton = CiteButton.byDefault();
     private final ArticleImagesElement imagesElement = ArticleImagesElement.byDefault();
+    public final FollowButton followButton = FollowButton.byDefault();
 
     public String getArticleTitle() {
         return titleElement.getText();
@@ -42,6 +42,10 @@ public class ArticlePage extends BasePage {
 
     public boolean hasEnglishVersion() {
         return englishButton.isDisplayed(Duration.ofSeconds(3));
+    }
+
+    public boolean hasFollowButton(){
+        return followButton.isDisplayed();
     }
     
     public void scrollToFooter() {
@@ -70,6 +74,22 @@ public class ArticlePage extends BasePage {
 
     public boolean hasNotesSection() {
         return notesSection.exists();
+    }
+
+    public boolean isArticleWatched() {
+        return followButton.isActive();
+    }
+
+    public void toggleFollowButton() {
+        followButton.click();
+    }
+
+    public void waitUntilWatchButtonIsVisible(){
+        followButton.watchButtonShouldBeVisible();
+    }
+
+    public void waitUntilUnwatchButtonIsVisible(){
+        followButton.unwatchButtonShouldBeVisible();
     }
     
 }
