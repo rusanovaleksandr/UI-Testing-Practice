@@ -1,9 +1,7 @@
 package com.example.wikipedia.elements;
 import static com.codeborne.selenide.Condition.visible;
 
-public class WrongLoginMessage extends BaseElement {
-    private static final String CLASS_XPATH = "//*[@class='%s']";
-    
+public class WrongLoginMessage extends BaseElement {    
     public WrongLoginMessage(String selector, boolean xpath) {
         super(selector, xpath);
     }

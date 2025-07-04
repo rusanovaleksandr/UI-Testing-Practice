@@ -5,8 +5,6 @@ import java.time.Duration;
 
 
 public class GalleryCloseButton extends ClickableElement {
-    private static final int TIMEOUT = 3; 
-    
     public GalleryCloseButton(String selector, boolean xpath) {
         super(selector, xpath);
     }

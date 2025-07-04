@@ -8,7 +8,6 @@ import com.example.wikipedia.elements.GalleryCloseButton;
 import com.example.wikipedia.elements.LanguageSwitchButton;
 import com.example.wikipedia.elements.ArticleSection;
 import com.example.wikipedia.elements.ShortUrlButton;
-import com.example.wikipedia.elements.InfoboxImage;
 
 public class ArticlePage extends BasePage {
     private final ArticleTitleElement titleElement = ArticleTitleElement.byId("firstHeading");
@@ -20,7 +19,7 @@ public class ArticlePage extends BasePage {
     private final InteractiveElement citeButton = InteractiveElement.byId("t-cite");
     private final FollowButton followButton = FollowButton.byIds("ca-watch", "ca-unwatch");
     private final GalleryCloseButton galleryCloseButton = GalleryCloseButton.byTitle("Закрыть этот инструмент (Esc)");
-    private final InfoboxImage infoboxImage = InfoboxImage.bySelector("td.infobox-image img");
+    private final InteractiveElement infoboxImage =  InteractiveElement.bySelector("td.infobox-image img");
 
     public String getArticleTitle() {
         return titleElement.getText();
