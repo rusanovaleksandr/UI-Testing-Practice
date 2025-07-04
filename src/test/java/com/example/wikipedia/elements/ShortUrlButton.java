@@ -8,11 +8,7 @@ public class ShortUrlButton extends BaseElement {
     public ShortUrlButton(String selector, boolean xpath) {
         super(selector, xpath);
     }
-    
-    public boolean isAvailable() {
-        return element.exists() && element.isDisplayed();
-    }
-    
+
     public void clickAndOpenDialog() {
         element.click();
     }

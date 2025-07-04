@@ -1,15 +1,11 @@
 package com.example.wikipedia.elements;
 
-public class PasswordField extends BaseElement{
+public class PasswordField extends InputElement{
     private static final String ID_XPATH = "//*[@id='%s']";
     private static final String NAME_XPATH = "//*[@name='%s']";
 
     public PasswordField(String selector, boolean xpath) {
         super(selector, xpath);
-    }
-
-    public void setValue(String value){
-        element.setValue(value);
     }
 
     public static PasswordField byId(String id){

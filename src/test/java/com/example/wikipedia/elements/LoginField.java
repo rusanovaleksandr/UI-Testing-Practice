@@ -1,17 +1,13 @@
 package com.example.wikipedia.elements;
 
-public class LoginField extends BaseElement{
+public class LoginField extends InputElement{
     private static final String ID_XPATH = "//*[@id='%s']";
     private static final String NAME_XPATH = "//*[@name='%s']";
 
     public LoginField(String selector, boolean xpath) {
         super(selector, xpath);
     }
-
-    public void setValue(String value){
-        element.setValue(value);
-    }
-
+git
     public static LoginField byId(String id){
         return new LoginField(String.format(ID_XPATH, id), true); 
     }
