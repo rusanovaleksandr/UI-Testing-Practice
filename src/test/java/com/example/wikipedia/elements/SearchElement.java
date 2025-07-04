@@ -1,8 +1,6 @@
 package com.example.wikipedia.elements;
 
 public class SearchElement extends InputElement {
-    private static final String CLASS_XPATH = "//*[@class='%s']";
-
     public SearchElement(String selector, boolean xpath) {
         super(selector, xpath);
     }

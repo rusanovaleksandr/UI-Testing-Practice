@@ -1,7 +1,6 @@
 package com.example.wikipedia.elements;
 
 public class InfoboxImage extends BaseElement {
-
     public InfoboxImage(String selector, boolean xpath) {
         super(selector, xpath);
     }

@@ -1,8 +1,6 @@
 package com.example.wikipedia.elements;
 
 public class LoginField extends InputElement{
-    private static final String NAME_XPATH = "//*[@name='%s']";
-
     public LoginField(String selector, boolean xpath) {
         super(selector, xpath);
     }

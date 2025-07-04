@@ -5,7 +5,6 @@ import static java.time.Duration.ofSeconds;
 
 
 public class GalleryCloseButton extends BaseElement {
-    private static final String TITLE_XPATH = "//button[contains(@title, '%s')]";
     private static final int TIMEOUT = 3; 
     
     public GalleryCloseButton(String selector, boolean xpath) {

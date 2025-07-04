@@ -5,7 +5,6 @@ public class PdfDownloadButton extends BaseElement {
         super(selector, xpath);
     }
     
-
     public static PdfDownloadButton byId(String id){
         return new PdfDownloadButton(String.format(ID_XPATH, id), true);
     }

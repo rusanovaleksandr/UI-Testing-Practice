@@ -1,8 +1,6 @@
 package com.example.wikipedia.elements;
 
 public class LoginAttemptButton extends BaseElement {
-    private static final String TYPE_XPATH = "//*[@type='%s']";
-    
     public LoginAttemptButton(String selector, boolean xpath) {
         super(selector, xpath);
     }
