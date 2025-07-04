@@ -1,5 +1,6 @@
 package com.example.wikipedia.pages;
 
+import java.io.File;
 import java.time.Duration;
 
 import com.example.wikipedia.elements.*;
@@ -137,6 +138,5 @@ public class ArticlePage extends BasePage {
         pdfButton.click();
         return new PdfDownloadPage();
     }
-
     
 }

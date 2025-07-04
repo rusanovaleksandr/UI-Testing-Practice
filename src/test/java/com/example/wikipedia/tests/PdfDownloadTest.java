@@ -14,7 +14,7 @@ public class PdfDownloadTest extends BaseTest {
     private static final String DOWNLOAD_DIR = "target/downloads";
 
     @Test
-    void shouldDownloadPdfCorrectly() throws Exception {
+    void shouldDownloadPdfCorrectly() {
         // Подготовка тестовых данных
         String articleName = TestDataLoader.getTestArticle(TEST_ARTICLE_KEY);
         assertNotNull(articleName, "Название статьи не загружено");
@@ -37,8 +37,6 @@ public class PdfDownloadTest extends BaseTest {
         assertTrue(downloadedFile.length() > 0, "Файл пустой");
         assertTrue(isPdfValid(downloadedFile), "Невалидный PDF");
 
-        // Очистка
-        downloadedFile.delete();
     }
 
     private boolean isPdfValid(File file) {
