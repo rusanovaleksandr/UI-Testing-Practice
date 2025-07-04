@@ -7,9 +7,6 @@ public class CiteButton extends BaseElement {
         super(selector, xpath);
     }
 
-    public boolean isAvailable() {
-        return element.exists() && element.isDisplayed();
-    }
     public static CiteButton byId(String id){
         return new CiteButton(String.format(ID_XPATH, id), true);
     }

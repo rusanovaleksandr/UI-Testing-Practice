@@ -20,6 +20,10 @@ public abstract class BaseElement {
         this.element = isXpath ? $x(locator) : $(locator);
     }
 
+    public boolean isAvailable() {
+        return element.exists() && element.isDisplayed();
+    }
+
     public boolean isDisplayed() {
         try {
             return element.shouldBe(visible).isDisplayed();
