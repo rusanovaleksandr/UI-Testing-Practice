@@ -6,8 +6,6 @@ import static java.time.Duration.ofSeconds;
 
 public class FollowButton extends BaseElement {
     private static final String TWO_IDS_XPATH = "//*[@id='%s' or @id='%s']";
-    private static final String DEFAULT_WATCH_ID = "ca-watch";
-    private static final String DEFAULT_UNWATCH_ID = "ca-unwatch";
     private final String watch_button_selector;
     private final String unwatch_button_selector;
     
@@ -33,7 +31,4 @@ public class FollowButton extends BaseElement {
         return new FollowButton(watch_id, unwatch_id, true);
     }
 
-    public static FollowButton byDefault() {
-        return new FollowButton(DEFAULT_WATCH_ID, DEFAULT_UNWATCH_ID, true);
-    }
 }

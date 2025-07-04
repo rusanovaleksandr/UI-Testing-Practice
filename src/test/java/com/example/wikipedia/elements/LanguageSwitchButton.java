@@ -2,7 +2,6 @@ package com.example.wikipedia.elements;
 
 public class LanguageSwitchButton extends BaseElement {
     private static final String LANG_XPATH = "//*[@lang='%s']";
-    private static final String DEFAULT_CSS_SELECTOR = "a.interlanguage-link-target[lang='en']";
 
     public LanguageSwitchButton(String selector, boolean xpath) {
         super(selector, xpath);
@@ -10,9 +9,5 @@ public class LanguageSwitchButton extends BaseElement {
 
     public static LanguageSwitchButton byLangValue(String lang_value) {
         return new LanguageSwitchButton(String.format(LANG_XPATH, lang_value), true);
-    }
-    
-    public static LanguageSwitchButton byDefault() {
-        return new LanguageSwitchButton(DEFAULT_CSS_SELECTOR, false);
     }
 }

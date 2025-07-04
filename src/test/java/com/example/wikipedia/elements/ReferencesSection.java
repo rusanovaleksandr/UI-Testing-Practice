@@ -2,7 +2,6 @@ package com.example.wikipedia.elements;
 
 public class ReferencesSection extends BaseElement {
     private static final String ID_XPATH = "//*[@id='%s']";
-    private static final String DEFAULT_CSS_SELECTOR = "#Ссылки";
 
     public ReferencesSection(String selector, boolean xpath) {
         super(selector, xpath);
@@ -16,7 +15,4 @@ public class ReferencesSection extends BaseElement {
         return element.$$x("./following-sibling::div[1]//li").size();
     }
 
-    public static ReferencesSection byDefault() {
-        return new ReferencesSection(DEFAULT_CSS_SELECTOR, false);
-    }
 }

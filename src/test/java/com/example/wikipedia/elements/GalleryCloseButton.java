@@ -24,9 +24,5 @@ public class GalleryCloseButton extends BaseElement {
     public static GalleryCloseButton byTitle(String title){
         return new GalleryCloseButton(String.format(TITLE_XPATH, title), true);
     }
-
-    public static GalleryCloseButton byDefault() {
-        return new GalleryCloseButton(DEFAULT_CSS_SELECTOR, false);
-    }
 }
 
