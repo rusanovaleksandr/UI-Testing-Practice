@@ -20,7 +20,6 @@ public class ArticlePage extends BasePage {
     private final InfoboxImage infoboxImage = InfoboxImage.byParentClass("infobox-image");
     private final BackToTextButton backToTextButton = BackToTextButton.byDefault();
     private final FootnoteElement footnote = FootnoteElement.byFootnoteNumber("1");
-    private final DownloadButton downloadButton = DownloadButton.byText("Скачать");
 
     public String getArticleTitle() {
         return titleElement.getText();
@@ -139,8 +138,5 @@ public class ArticlePage extends BasePage {
         return new PdfDownloadPage();
     }
 
-    public String getExpectedPdfFileName(String articleName) {
-        return articleName.replace(' ', '_') + ".pdf";
-    }
     
 }

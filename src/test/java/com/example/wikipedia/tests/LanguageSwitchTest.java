@@ -12,18 +12,18 @@ public class LanguageSwitchTest extends BaseTest{
     @Test
     void shouldSwitchToEnglishVersion() {
 
-        // 2. Загрузить тестовые данные
+        // Загрузить тестовые данные
         String articleName = TestDataLoader.getTestArticle(TEST_ARTICLE_KEY);
         assertNotNull(articleName, "Название статьи не найдено в тестовых данных");
 
-        // 3. Перейти на статью
+        // Перейти на статью
         ArticlePage articlePage = mainPage.openArticle(articleName);
         //ArticlePage articlePage = mainPage.openRandomArticle();
 
         // Проверка 1: Ссылка "English" доступна
         assertTrue(articlePage.hasEnglishVersion());
 
-        // 4. Переключиться на английскую версию
+        // Переключиться на английскую версию
         ArticlePage enArticlePage = articlePage.switchToEnglish();
 
         // Проверка 2: URL изменен

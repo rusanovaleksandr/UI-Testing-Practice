@@ -1,7 +1,6 @@
 package com.example.wikipedia.elements;
 
 public class FootnoteElement extends BaseElement {
-    // Универсальный локатор для сносок
     private static final String FOOTNOTE_XPATH =
             "//sup[@class='reference']/a[contains(@href, 'cite_note') and contains(text(), '%s')]";
 

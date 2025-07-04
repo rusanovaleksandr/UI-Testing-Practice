@@ -10,7 +10,6 @@ public class PdfDownloadPage extends BasePage {
     private final SelenideElement downloadButton = $x("//button[.//span[text()='Скачать']]");
 
     public File downloadPdf() {
-        // Возвращаем File объект напрямую из Selenide
         return downloadButton.download();
     }
 }
