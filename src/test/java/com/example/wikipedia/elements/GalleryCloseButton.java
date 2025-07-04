@@ -1,10 +1,10 @@
 package com.example.wikipedia.elements;
 
 import static com.codeborne.selenide.Condition.visible;
-import static java.time.Duration.ofSeconds;
+import java.time.Duration;
 
 
-public class GalleryCloseButton extends BaseElement {
+public class GalleryCloseButton extends ClickableElement {
     private static final int TIMEOUT = 3; 
     
     public GalleryCloseButton(String selector, boolean xpath) {
@@ -12,11 +12,11 @@ public class GalleryCloseButton extends BaseElement {
     }
 
     public void clickAndWaitUntilClosed() {
-        element.shouldBe(visible, ofSeconds(TIMEOUT)).click();
+        click(Duration.ofSeconds(TIMEOUT));
     }
 
     public void waitUntilOpened() {
-        element.shouldBe(visible, ofSeconds(TIMEOUT));
+        element.shouldBe(visible, Duration.ofSeconds(TIMEOUT));
     }
 
     public static GalleryCloseButton byTitle(String title){

@@ -1,6 +1,6 @@
 package com.example.wikipedia.elements;
 
-public class LoginAttemptButton extends BaseElement {
+public class LoginAttemptButton extends ClickableElement {
     public LoginAttemptButton(String selector, boolean xpath) {
         super(selector, xpath);
     }

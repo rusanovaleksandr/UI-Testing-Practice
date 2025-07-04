@@ -2,7 +2,7 @@ package com.example.wikipedia.elements;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class ShortUrlButton extends BaseElement {
+public class ShortUrlButton extends ClickableElement {
     public ShortUrlButton(String selector, boolean xpath) {
         super(selector, xpath);
     }

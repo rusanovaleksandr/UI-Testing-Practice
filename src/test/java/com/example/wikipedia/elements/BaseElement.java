@@ -49,9 +49,4 @@ public abstract class BaseElement {
             return false;
         }
     }
-
-    public void click()
-    {
-        element.shouldBe(visible).click();
-    }
 }

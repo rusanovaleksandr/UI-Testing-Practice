@@ -4,7 +4,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static java.time.Duration.ofSeconds;
 
-public class FollowButton extends BaseElement {
+public class FollowButton extends ClickableElement {
     private static final String TWO_IDS_XPATH = "//*[@id='%s' or @id='%s']";
     private final String watch_button_selector;
     private final String unwatch_button_selector;

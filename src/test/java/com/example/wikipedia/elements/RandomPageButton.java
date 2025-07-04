@@ -1,6 +1,6 @@
 package com.example.wikipedia.elements;
 
-public class RandomPageButton extends BaseElement {
+public class RandomPageButton extends ClickableElement {
     public RandomPageButton(String selector, boolean xpath) {
         super(selector, xpath);
     }

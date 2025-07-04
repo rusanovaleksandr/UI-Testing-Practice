@@ -1,6 +1,6 @@
 package com.example.wikipedia.elements;
 
-public class CiteButton extends BaseElement {    
+public class CiteButton extends ClickableElement {    
     public CiteButton(String selector, boolean xpath) {
         super(selector, xpath);
     }

@@ -102,7 +102,7 @@ public class ArticlePage extends BasePage {
     }
 
     public void closeGallery(){
-        galleryCloseButton.clickAndWaitUntilClosed();
+        galleryCloseButton.click(Duration.ofSeconds(3));
     }
 
     public boolean isGalleryVisible(){

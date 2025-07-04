@@ -1,6 +1,6 @@
 package com.example.wikipedia.elements;
 
-public class PdfDownloadButton extends BaseElement {
+public class PdfDownloadButton extends ClickableElement {
     public PdfDownloadButton(String selector, boolean xpath) {
         super(selector, xpath);
     }
