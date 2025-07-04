@@ -12,12 +12,12 @@ public class LoginPage {
     private final WrongLoginMessage wrongLoginMessage = WrongLoginMessage.byClass("cdx-message__content");
 
     public LoginPage enterLogin(String login) {
-        loginField.setValue(login);
+        loginField.fill(login);
         return this;
     }
 
     public LoginPage enterPassword(String password) {
-        passwordField.setValue(password);
+        passwordField.fill(password);
         return this;
     }
 

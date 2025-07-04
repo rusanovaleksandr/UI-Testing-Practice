@@ -5,7 +5,7 @@ public class InputElement extends BaseElement {
         super(selector, xpath);
     }
 
-    public void setValue(String text) {
+    public void fill(String text) {
         element.setValue(text);
     }
 

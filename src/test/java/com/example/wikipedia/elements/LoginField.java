@@ -7,7 +7,7 @@ public class LoginField extends InputElement{
     public LoginField(String selector, boolean xpath) {
         super(selector, xpath);
     }
-git
+
     public static LoginField byId(String id){
         return new LoginField(String.format(ID_XPATH, id), true); 
     }
