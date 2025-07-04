@@ -1,13 +1,18 @@
 package com.example.wikipedia.tests;
 
-import com.example.wikipedia.pages.ArticlePage;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import com.example.wikipedia.pages.ArticlePage;
 import com.example.wikipedia.services.TestDataLoader;
+
 
 
 public class ShortUrlGenerationTest extends BaseTest {
     private static final String TEST_ARTICLE_KEY = "test5_short_url";
+    private static final String SHORT_URL_PREFIX = "https://w.wiki/";
 
     @Test
     void shouldGenerateValidShortUrl() {
@@ -17,8 +22,8 @@ public class ShortUrlGenerationTest extends BaseTest {
         String originalTitle = articlePage.getArticleTitle();
         articlePage.openShortUrlDialogWindow();
         String shortUrl = articlePage.getShortUrlFromDialogWindow();
-        assertTrue(shortUrl.startsWith("https://w.wiki/"), 
-            "Сгенерированный URL должен начинаться с https://w.wiki/");
+        assertTrue(shortUrl.startsWith(SHORT_URL_PREFIX), 
+            "Сгенерированный URL должен начинаться с " + SHORT_URL_PREFIX);
         articlePage.open(shortUrl);
         assertEquals(originalTitle, articlePage.getArticleTitle(),
             "Заголовок статьи должен совпадать с оригиналом");

@@ -1,8 +1,8 @@
 package com.example.wikipedia.pages;
 
+import com.example.wikipedia.elements.InteractiveElement;
 import com.example.wikipedia.elements.SearchElement;
 import com.example.wikipedia.elements.UserIcon;
-import com.example.wikipedia.elements.InteractiveElement;
 
 public class MainPage extends BasePage {
     private final InteractiveElement randomPageButton = InteractiveElement.byTitle("Посмотреть случайно выбранную страницу");
@@ -39,7 +39,6 @@ public class MainPage extends BasePage {
         logoutButton.click(); // Нажимаем "Выйти"
         return this;
     }
-
 
     public static MainPage byDefault() {
         return new MainPage();

@@ -1,14 +1,12 @@
 package com.example.wikipedia.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeEach;
-import com.example.wikipedia.pages.MainPage;
-
-import io.github.cdimascio.dotenv.Dotenv;
+import org.junit.jupiter.api.Test;
 
 import com.example.wikipedia.pages.LoginPage;
-import org.junit.jupiter.api.Test;
+
+import io.github.cdimascio.dotenv.Dotenv;
 
 public class InvalidLoginTest extends BaseTest {
     private static final Dotenv dotenv = Dotenv.load();
@@ -18,11 +16,8 @@ public class InvalidLoginTest extends BaseTest {
 
     @BeforeEach
     @Override
-    void auth() {
-        // Переопределяем метод, чтобы авторизация не выполнялась
-        mainPage = MainPage.byDefault();
-        mainPage.open();
-
+    void init() {
+        openMainPage();
         // Если пользователь авторизован — выходим
         if (mainPage.isLoggedIn(LOGIN)) {
             mainPage.logout();
