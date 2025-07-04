@@ -2,13 +2,9 @@ package com.example.wikipedia.elements;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class ShortUrlButton extends ClickableElement {
+public class ShortUrlButton extends InteractiveElement {
     public ShortUrlButton(String selector, boolean xpath) {
         super(selector, xpath);
-    }
-
-    public void clickAndOpenDialog() {
-        element.click();
     }
 
     public String getShortUrlFromDialog() {

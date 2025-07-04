@@ -12,4 +12,12 @@ public class InputElement extends BaseElement {
     public void clear() {
         element.clear();
     }
+
+    public static InputElement byId(String id){
+        return new InputElement(String.format(ID_XPATH, id), true); 
+    }
+
+    public static InputElement byName(String name){
+        return new InputElement(String.format(NAME_XPATH, name), true); 
+    }
 }

@@ -1,6 +1,6 @@
 package com.example.wikipedia.elements;
 
-public class UserIcon extends BaseElement {
+public class UserIcon extends InteractiveElement {
     public UserIcon(String selector, boolean xpath) {
         super(selector, xpath);
     }

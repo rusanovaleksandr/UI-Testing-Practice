@@ -1,6 +1,6 @@
 package com.example.wikipedia.elements;
 
-public class LanguageSwitchButton extends ClickableElement {
+public class LanguageSwitchButton extends InteractiveElement {
     private static final String LANG_XPATH = "//*[@lang='%s']";
 
     public LanguageSwitchButton(String selector, boolean xpath) {

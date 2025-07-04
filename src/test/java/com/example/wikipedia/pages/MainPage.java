@@ -1,17 +1,14 @@
 package com.example.wikipedia.pages;
 
-import com.example.wikipedia.elements.RandomPageButton;
 import com.example.wikipedia.elements.SearchElement;
 import com.example.wikipedia.elements.UserIcon;
-
-import com.example.wikipedia.elements.LoginButton;
-import com.example.wikipedia.elements.LogoutButton;
+import com.example.wikipedia.elements.InteractiveElement;
 
 public class MainPage extends BasePage {
-    private final RandomPageButton randomPageButton = RandomPageButton.byTitle("Посмотреть случайно выбранную страницу");
+    private final InteractiveElement randomPageButton = InteractiveElement.byTitle("Посмотреть случайно выбранную страницу");
     private final SearchElement searchElement = SearchElement.byClass("vector-search-box-input");
-    private final LoginButton loginButton = LoginButton.byId("pt-login");
-    private final LogoutButton logoutButton = LogoutButton.byId("pt-logout");
+    private final InteractiveElement loginButton = InteractiveElement.byId("pt-login");
+    private final InteractiveElement logoutButton = InteractiveElement.byId("pt-logout");
     private final UserIcon userIcon = UserIcon.byId("pt-userpage");
 
     public MainPage() {

@@ -2,24 +2,22 @@ package com.example.wikipedia.pages;
 
 import java.time.Duration;
 import com.example.wikipedia.elements.ArticleTitleElement;
-import com.example.wikipedia.elements.CiteButton;
 import com.example.wikipedia.elements.FollowButton;
+import com.example.wikipedia.elements.InteractiveElement;
 import com.example.wikipedia.elements.GalleryCloseButton;
 import com.example.wikipedia.elements.LanguageSwitchButton;
-import com.example.wikipedia.elements.NotesSection;
-import com.example.wikipedia.elements.PdfDownloadButton;
-import com.example.wikipedia.elements.ReferencesSection;
+import com.example.wikipedia.elements.ArticleSection;
 import com.example.wikipedia.elements.ShortUrlButton;
 import com.example.wikipedia.elements.InfoboxImage;
 
 public class ArticlePage extends BasePage {
     private final ArticleTitleElement titleElement = ArticleTitleElement.byId("firstHeading");
     private final LanguageSwitchButton englishButton = LanguageSwitchButton.byLangValue("en");
-    private final PdfDownloadButton pdfButton = PdfDownloadButton.byId("coll-download-as-rl");
+    private final InteractiveElement pdfButton = InteractiveElement.byId("coll-download-as-rl");
     private final ShortUrlButton shortUrlButton = ShortUrlButton.byId("t-urlshortener");
-    private final ReferencesSection referencesSection = ReferencesSection.byId("Ссылки");
-    private final NotesSection notesSection = NotesSection.byId("Примечания");
-    private final CiteButton citeButton = CiteButton.byId("t-cite");
+    private final ArticleSection referencesSection = ArticleSection.byId("Ссылки");
+    private final ArticleSection notesSection = ArticleSection.byId("Примечания");
+    private final InteractiveElement citeButton = InteractiveElement.byId("t-cite");
     private final FollowButton followButton = FollowButton.byIds("ca-watch", "ca-unwatch");
     private final GalleryCloseButton galleryCloseButton = GalleryCloseButton.byTitle("Закрыть этот инструмент (Esc)");
     private final InfoboxImage infoboxImage = InfoboxImage.bySelector("td.infobox-image img");
@@ -30,7 +28,7 @@ public class ArticlePage extends BasePage {
 
     public void openShortUrlDialogWindow()
     {
-        shortUrlButton.clickAndOpenDialog();
+        shortUrlButton.click();
     }
 
     public String getShortUrlFromDialogWindow(){
@@ -65,10 +63,6 @@ public class ArticlePage extends BasePage {
         return shortUrlButton.isAvailable();
     }
     
-    public void openShortUrlDialog() {
-        shortUrlButton.clickAndOpenDialog();
-    }
-
     public boolean hasReferencesSection() {
         return referencesSection.exists();
     }
