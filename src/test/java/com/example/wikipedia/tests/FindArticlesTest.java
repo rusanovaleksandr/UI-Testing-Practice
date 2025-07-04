@@ -1,10 +1,10 @@
 package com.example.wikipedia.tests;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.HashMap;
 import java.util.Map;
-
 import org.junit.jupiter.api.Test;
-
 import com.example.wikipedia.pages.ArticlePage;
 import com.example.wikipedia.services.TestResults;
 
@@ -51,9 +51,7 @@ public class FindArticlesTest extends BaseTest {
         }
         
         conditions.forEach((testName, found) -> {
-            if (!found) {
-                TestResults.addResult(testName, "Не найдено за " + MAX_ATTEMPTS + " попыток");
-            }
+            assertTrue(found, "Статья для теста " + testName + " не найдена за " + MAX_ATTEMPTS + " попыток");
         });
     }
 
@@ -64,5 +62,4 @@ public class FindArticlesTest extends BaseTest {
             conditions.put(conditionName, true);
         }
     }
-
 }
