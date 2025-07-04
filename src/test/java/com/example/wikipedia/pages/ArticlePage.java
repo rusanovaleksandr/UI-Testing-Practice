@@ -22,7 +22,7 @@ public class ArticlePage extends BasePage {
     private final CiteButton citeButton = CiteButton.byId("t-cite");
     private final FollowButton followButton = FollowButton.byIds("ca-watch", "ca-unwatch");
     private final GalleryCloseButton galleryCloseButton = GalleryCloseButton.byTitle("Закрыть этот инструмент (Esc)");
-    private final InfoboxImage infoboxImage = InfoboxImage.byParentClass("infobox-image");
+    private final InfoboxImage infoboxImage = InfoboxImage.bySelector("td.infobox-image img");
 
     public String getArticleTitle() {
         return titleElement.getText();
