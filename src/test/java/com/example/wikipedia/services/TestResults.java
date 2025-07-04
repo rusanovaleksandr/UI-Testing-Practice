@@ -46,6 +46,6 @@ public class TestResults {
     }
     
     public static Map<String, String> getResults() {
-        return new HashMap<>(results); // Возвращаем копию для безопасности
+        return new HashMap<>(results); 
     }
 }

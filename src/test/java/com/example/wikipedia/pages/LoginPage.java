@@ -6,10 +6,10 @@ import com.example.wikipedia.elements.PasswordField;
 import com.example.wikipedia.elements.WrongLoginMessage;
 
 public class LoginPage {
-    private final LoginField loginField = LoginField.byDefault();
-    private final PasswordField passwordField = PasswordField.byDefault();
-    private final LoginAttemptButton loginAttemptButton = LoginAttemptButton.byDefault();
-    private final WrongLoginMessage wrongLoginMessage = WrongLoginMessage.byDefault();
+    private final LoginField loginField = LoginField.byName("wpName");
+    private final PasswordField passwordField = PasswordField.byName("wpPassword");
+    private final LoginAttemptButton loginAttemptButton = LoginAttemptButton.byType("submit");
+    private final WrongLoginMessage wrongLoginMessage = WrongLoginMessage.byClass("cdx-message__content");
 
     public LoginPage enterLogin(String login) {
         loginField.setValue(login);

@@ -1,27 +1,28 @@
 package com.example.wikipedia.pages;
 
 import java.time.Duration;
-
-import com.example.wikipedia.elements.ArticleImagesElement;
 import com.example.wikipedia.elements.ArticleTitleElement;
 import com.example.wikipedia.elements.CiteButton;
 import com.example.wikipedia.elements.FollowButton;
+import com.example.wikipedia.elements.GalleryCloseButton;
 import com.example.wikipedia.elements.LanguageSwitchButton;
 import com.example.wikipedia.elements.NotesSection;
 import com.example.wikipedia.elements.PdfDownloadButton;
 import com.example.wikipedia.elements.ReferencesSection;
 import com.example.wikipedia.elements.ShortUrlButton;
+import com.example.wikipedia.elements.InfoboxImage;
 
 public class ArticlePage extends BasePage {
-    private final ArticleTitleElement titleElement = ArticleTitleElement.byDefault();
-    private final LanguageSwitchButton englishButton = LanguageSwitchButton.byDefault();
-    private final PdfDownloadButton pdfButton = PdfDownloadButton.byDefault();
-    private final ShortUrlButton shortUrlButton = ShortUrlButton.byDefault();
-    private final ReferencesSection referencesSection = ReferencesSection.byDefault();
-    private final NotesSection notesSection = NotesSection.byDefault();
-    private final CiteButton citeButton = CiteButton.byDefault();
-    private final ArticleImagesElement imagesElement = ArticleImagesElement.byDefault();
-    public final FollowButton followButton = FollowButton.byDefault();
+    private final ArticleTitleElement titleElement = ArticleTitleElement.byId("firstHeading");
+    private final LanguageSwitchButton englishButton = LanguageSwitchButton.byLangValue("en");
+    private final PdfDownloadButton pdfButton = PdfDownloadButton.byId("coll-download-as-rl");
+    private final ShortUrlButton shortUrlButton = ShortUrlButton.byId("t-urlshortener");
+    private final ReferencesSection referencesSection = ReferencesSection.byId("Ссылки");
+    private final NotesSection notesSection = NotesSection.byId("Примечания");
+    private final CiteButton citeButton = CiteButton.byId("t-cite");
+    private final FollowButton followButton = FollowButton.byIds("ca-watch", "ca-unwatch");
+    private final GalleryCloseButton galleryCloseButton = GalleryCloseButton.byTitle("Закрыть этот инструмент (Esc)");
+    private final InfoboxImage infoboxImage = InfoboxImage.byParentClass("infobox-image");
 
     public String getArticleTitle() {
         return titleElement.getText();
@@ -37,7 +38,7 @@ public class ArticlePage extends BasePage {
     }
 
     public boolean hasImages() {
-        return imagesElement.hasImages();
+        return infoboxImage.exists();
     }
 
     public boolean hasEnglishVersion() {
@@ -90,6 +91,22 @@ public class ArticlePage extends BasePage {
 
     public void waitUntilUnwatchButtonIsVisible(){
         followButton.unwatchButtonShouldBeVisible();
+    }
+
+    public void openGallery(){
+        infoboxImage.click();
+    }
+
+    public void waitUntilGalleryIsOpened(){
+        galleryCloseButton.waitUntilOpened();
+    }
+
+    public void closeGallery(){
+        galleryCloseButton.clickAndWaitUntilClosed();
+    }
+
+    public boolean isGalleryVisible(){
+        return galleryCloseButton.exists();
     }
     
 }

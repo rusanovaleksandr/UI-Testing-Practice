@@ -1,14 +1,15 @@
 package com.example.wikipedia.elements;
 
 public class ReferencesSection extends BaseElement {
+    private static final String ID_XPATH = "//*[@id='%s']";
     private static final String DEFAULT_CSS_SELECTOR = "#Ссылки";
 
-    public ReferencesSection(String selector) {
-        super(selector);
+    public ReferencesSection(String selector, boolean xpath) {
+        super(selector, xpath);
     }
 
-    public boolean exists() {
-        return element.exists();
+    public static ReferencesSection byId(String id){
+        return new ReferencesSection(String.format(ID_XPATH, id), true); 
     }
     
     public int getReferencesCount() {
@@ -16,6 +17,6 @@ public class ReferencesSection extends BaseElement {
     }
 
     public static ReferencesSection byDefault() {
-        return new ReferencesSection(DEFAULT_CSS_SELECTOR);
+        return new ReferencesSection(DEFAULT_CSS_SELECTOR, false);
     }
 }

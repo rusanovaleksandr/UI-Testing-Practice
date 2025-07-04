@@ -1,6 +1,7 @@
 package com.example.wikipedia.elements;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.ex.ElementNotFound;
 import java.time.Duration;
@@ -13,6 +14,10 @@ public abstract class BaseElement {
 
     public BaseElement(String selector) {
         this.element = $(selector);
+    }
+
+    public BaseElement(String locator, boolean isXpath) {
+        this.element = isXpath ? $x(locator) : $(locator);
     }
 
     public boolean isDisplayed() {

@@ -4,16 +4,15 @@ import com.example.wikipedia.elements.RandomPageButton;
 import com.example.wikipedia.elements.SearchElement;
 import com.example.wikipedia.elements.UserIcon;
 
-import static com.codeborne.selenide.Selenide.$;
 import com.example.wikipedia.elements.LoginButton;
 import com.example.wikipedia.elements.LogoutButton;
 
 public class MainPage extends BasePage {
-    private final RandomPageButton randomPageButton = RandomPageButton.byDefault();
-    private final SearchElement searchElement = SearchElement.byDefault();
-    private final LoginButton loginButton = LoginButton.byDefault();
-    private final LogoutButton logoutButton = LogoutButton.byDefault();
-    private final UserIcon userIcon = UserIcon.byDefault();
+    private final RandomPageButton randomPageButton = RandomPageButton.byTitle("Посмотреть случайно выбранную страницу");
+    private final SearchElement searchElement = SearchElement.byClass("vector-search-box-input");
+    private final LoginButton loginButton = LoginButton.byId("pt-login");
+    private final LogoutButton logoutButton = LogoutButton.byId("pt-logout");
+    private final UserIcon userIcon = UserIcon.byId("pt-userpage");
 
     public MainPage() {
         super("https://ru.wikipedia.org/wiki/Главная_страница");

@@ -1,8 +1,8 @@
 package com.example.wikipedia.elements;
 
 public class InputElement extends BaseElement {
-    public InputElement(String selector) {
-        super(selector);
+    public InputElement(String selector, boolean xpath) {
+        super(selector, xpath);
     }
 
     public void setValue(String text) {

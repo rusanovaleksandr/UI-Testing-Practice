@@ -21,6 +21,6 @@ public class BaseTest {
 
     @BeforeEach
     void auth() {
-        mainPage = AuthService.login();// Авторизация перед каждым тестом
+        mainPage = AuthService.login();
     }
 }
