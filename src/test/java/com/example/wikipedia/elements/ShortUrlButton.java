@@ -3,8 +3,6 @@ package com.example.wikipedia.elements;
 import static com.codeborne.selenide.Selenide.$;
 
 public class ShortUrlButton extends BaseElement {
-    private static final String ID_XPATH = "//*[@id='%s']";
-
     public ShortUrlButton(String selector, boolean xpath) {
         super(selector, xpath);
     }

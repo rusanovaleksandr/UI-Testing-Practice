@@ -9,6 +9,8 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.visible;
 
 public abstract class BaseElement {
+    protected static final String ID_XPATH = "//*[@id='%s']";
+
     protected final SelenideElement element;
     protected static final int TIMEOUT = 10;
 

@@ -1,8 +1,6 @@
 package com.example.wikipedia.elements;
 
-public class CiteButton extends BaseElement {
-    private static final String ID_XPATH = "//*[@id='%s']";
-    
+public class CiteButton extends BaseElement {    
     public CiteButton(String selector, boolean xpath) {
         super(selector, xpath);
     }

@@ -1,8 +1,6 @@
 package com.example.wikipedia.elements;
 
 public class LoginButton extends BaseElement {
-    private static final String ID_XPATH = "//*[@id='%s']";
-
     public LoginButton(String selector, boolean xpath) {
         super(selector, xpath);
     }

@@ -1,8 +1,6 @@
 package com.example.wikipedia.elements;
 
 public class ReferencesSection extends BaseElement {
-    private static final String ID_XPATH = "//*[@id='%s']";
-
     public ReferencesSection(String selector, boolean xpath) {
         super(selector, xpath);
     }
