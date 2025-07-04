@@ -1,21 +1,48 @@
-package com.example.wikipedia.elements;
+/*package com.example.wikipedia.elements;
 
-public class ReferencesSection extends BaseElement {
-    private static final String DEFAULT_CSS_SELECTOR = "#Ссылки";
+import com.codeborne.selenide.ElementsCollection;
+
+public class ReferencesSection extends ScrollableElement {
+    public static final String DEFAULT_SELECTOR = "#Ссылки";
 
     public ReferencesSection(String selector) {
         super(selector);
     }
 
-    public boolean exists() {
-        return element.exists();
+    public static ReferencesSection byDefault() {
+        return new ReferencesSection(DEFAULT_SELECTOR);
     }
-    
-    public int getReferencesCount() {
-        return element.$$x("./following-sibling::div[1]//li").size();
+
+    public void clickFirstLink() {
+        element.$("a").click();
+    }
+
+    public boolean hasLinks() {
+        ElementsCollection links = element.$$("a");
+        return !links.isEmpty();
+    }
+}*/
+package com.example.wikipedia.elements;
+
+import com.codeborne.selenide.ElementsCollection;
+
+public class ReferencesSection extends ScrollableElement {
+    public static final String DEFAULT_SELECTOR = "#Ссылки";
+
+    public ReferencesSection(String selector) {
+        super(selector);
     }
 
     public static ReferencesSection byDefault() {
-        return new ReferencesSection(DEFAULT_CSS_SELECTOR);
+        return new ReferencesSection(DEFAULT_SELECTOR);
+    }
+
+    public void clickFirstLink() {
+        element.$("a").click();
+    }
+
+    public boolean hasLinks() {
+        ElementsCollection links = element.$$("a");
+        return !links.isEmpty();
     }
 }

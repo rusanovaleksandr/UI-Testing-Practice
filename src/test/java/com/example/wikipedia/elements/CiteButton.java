@@ -2,7 +2,7 @@ package com.example.wikipedia.elements;
 
 public class CiteButton extends BaseElement {
     private static final String DEFAULT_CSS_SELECTOR = "#t-cite";
-    
+
     public CiteButton(String selector) {
         super(selector);
     }
