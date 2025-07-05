@@ -24,16 +24,6 @@ public abstract class BasePage {
         return title();
     }
 
-    public BasePage open() {
-        Selenide.open(url);
-        return this;
-    }
-
-    public BasePage open(String given_url) {
-        Selenide.open(given_url);
-        return this;
-    }
-
     public String getCurrentUrl() {
         return url();
     }

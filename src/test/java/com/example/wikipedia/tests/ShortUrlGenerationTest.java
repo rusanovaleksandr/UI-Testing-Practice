@@ -24,8 +24,8 @@ public class ShortUrlGenerationTest extends BaseTest {
         String shortUrl = articlePage.getShortUrlFromDialogWindow();
         assertTrue(shortUrl.startsWith(SHORT_URL_PREFIX), 
             "Сгенерированный URL должен начинаться с " + SHORT_URL_PREFIX);
-        articlePage.open(shortUrl);
-        assertEquals(originalTitle, articlePage.getArticleTitle(),
+        ArticlePage reopenedArticle = articlePage.followShortUrl(shortUrl);
+        assertEquals(originalTitle, reopenedArticle.getArticleTitle(),
             "Заголовок статьи должен совпадать с оригиналом");
 
     }

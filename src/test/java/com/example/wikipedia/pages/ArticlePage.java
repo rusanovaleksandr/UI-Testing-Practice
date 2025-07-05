@@ -5,6 +5,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import com.example.wikipedia.elements.ArticleSection;
 import com.example.wikipedia.elements.ArticleTitleElement;
 import com.example.wikipedia.elements.FollowButton;
@@ -98,7 +99,6 @@ public class ArticlePage extends BasePage {
         followButton.unwatchButtonShouldBeVisible();
     }
 
-
     public void openGallery(){
         infoboxImage.click();
     }
@@ -113,6 +113,11 @@ public class ArticlePage extends BasePage {
 
     public boolean isGalleryVisible(){
         return galleryCloseButton.exists();
+    }
+
+    public ArticlePage followShortUrl(String shortUrl) {
+        WebDriverRunner.getWebDriver().navigate().to(shortUrl);
+        return this;
     }
 
     public ArticlePage switchToEnglish() {
