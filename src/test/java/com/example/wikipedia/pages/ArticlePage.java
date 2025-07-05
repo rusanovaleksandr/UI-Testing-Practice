@@ -1,9 +1,9 @@
 package com.example.wikipedia.pages;
 
+import java.io.File;
 import java.time.Duration;
 
 import com.codeborne.selenide.SelenideElement;
-
 import com.example.wikipedia.elements.ArticleTitleElement;
 import com.example.wikipedia.elements.FollowButton;
 import com.example.wikipedia.elements.InteractiveElement;
@@ -13,6 +13,8 @@ import com.example.wikipedia.elements.ArticleSection;
 import com.example.wikipedia.elements.ShortUrlButton;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
+import com.example.wikipedia.elements.BackToTextButton;
+import com.example.wikipedia.elements.FootnoteElement;
 
 
 public class ArticlePage extends BasePage {
@@ -26,9 +28,12 @@ public class ArticlePage extends BasePage {
     private final FollowButton followButton = FollowButton.byIds("ca-watch", "ca-unwatch");
     private final GalleryCloseButton galleryCloseButton = GalleryCloseButton.byTitle("Закрыть этот инструмент (Esc)");
     private final InteractiveElement infoboxImage =  InteractiveElement.bySelector("td.infobox-image img");
+    
     private final SelenideElement referencesHeader = $x("//h2[contains(., 'Ссылки')]");
     private final SelenideElement referencesListContainer =
             $x("//h2[contains(., 'Ссылки')]//following::ul[1]");
+    private final BackToTextButton backToTextButton = BackToTextButton.byDefault();
+    private final FootnoteElement footnote = FootnoteElement.byFootnoteNumber("1");
 
     public String getArticleTitle() {
         return titleElement.getText();
@@ -110,6 +115,38 @@ public class ArticlePage extends BasePage {
 
     public boolean isGalleryVisible(){
         return galleryCloseButton.exists();
+    }
+
+    public ArticlePage switchToEnglish() {
+        englishButton.click();
+        return new ArticlePage();
+    }
+
+    public String hasEnglishTemplate() {
+        return $x("//div[@id='siteSub']")
+                .shouldBe(visible, Duration.ofSeconds(5))
+                .getText();
+    }
+
+    public void clickFootnote() {
+        footnote.click();
+    }
+
+    public boolean isBackToTextButtonVisible() {
+        return backToTextButton.isDisplayed();
+    }
+
+    public void clickBackToTextButton() {
+        backToTextButton.click();
+    }
+
+    public boolean urlContainsAnchor(String anchor) {
+        return getCurrentUrl().contains(anchor);
+    }
+
+    public PdfDownloadPage openPdfDownload() {
+        pdfButton.click();
+        return new PdfDownloadPage();
     }
     
     public CitationPage clickCiteButton() {

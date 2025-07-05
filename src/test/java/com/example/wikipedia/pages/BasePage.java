@@ -4,6 +4,9 @@ import com.codeborne.selenide.Selenide;
 import static com.codeborne.selenide.Selenide.title;
 import com.example.wikipedia.services.WindowManager;
 
+import static com.codeborne.selenide.WebDriverRunner.url;
+
+
 public abstract class BasePage {
     protected final WindowManager windowManager = new WindowManager();
     protected String url;
@@ -29,5 +32,9 @@ public abstract class BasePage {
     public BasePage open(String given_url) {
         Selenide.open(given_url);
         return this;
+    }
+
+    public String getCurrentUrl() {
+        return url();
     }
 }
