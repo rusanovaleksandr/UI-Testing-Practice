@@ -1,14 +1,18 @@
 package com.example.wikipedia.tests;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
+
 import com.example.wikipedia.pages.ArticlePage;
 import com.example.wikipedia.services.TestResults;
 
-
+/**
+ * Тестовый класс для поиска статей с определенными условиями.
+ * Проверяет наличие различных элементов на случайно выбранных статьях.
+ */
 public class FindArticlesTest extends BaseTest {
     private static final int MAX_ATTEMPTS = 10;
     private static final String TEST_HAS_FOLLOW = "test2_has_follow";
@@ -21,6 +25,10 @@ public class FindArticlesTest extends BaseTest {
     private static final String TEST_HAS_ENGLISH = "test10_has_english";
     private static final String TEST_HAS_PDF = "test11_has_pdf";
     
+    /**
+     * Тестирует наличие различных элементов на случайно выбранных статьях.
+     * Выполняет до MAX_ATTEMPTS попыток для нахождения статей, соответствующих условиям.
+     */
     @Test
     void findArticlesWithConditions() {
         Map<String, Boolean> conditions = new HashMap<>() {{
@@ -42,7 +50,7 @@ public class FindArticlesTest extends BaseTest {
             checkAndUpdateCondition(conditions, article, TEST_HAS_FOLLOW, article.hasFollowButton());
             checkAndUpdateCondition(conditions, article, TEST_HAS_IMAGE, article.hasImages());
             checkAndUpdateCondition(conditions, article, TEST_SHORT_URL, article.hasShortUrlOption());
-            checkAndUpdateCondition(conditions, article, TEST_HAS_TITLE,true);
+            checkAndUpdateCondition(conditions, article, TEST_HAS_TITLE, true);
             checkAndUpdateCondition(conditions, article, TEST_HAS_CITE, article.hasCiteOption());
             checkAndUpdateCondition(conditions, article, TEST_HAS_REFERENCES, article.hasReferencesSection());
             checkAndUpdateCondition(conditions, article, TEST_HAS_NOTES, article.hasNotesSection());
@@ -55,6 +63,14 @@ public class FindArticlesTest extends BaseTest {
         });
     }
 
+    /**
+     * Проверяет, выполнено ли условие для статьи, и обновляет состояние условий.
+     *
+     * @param conditions карта условий, где ключ - имя условия, а значение - его состояние
+     * @param article экземпляр ArticlePage, представляющий проверяемую статью
+     * @param conditionName имя условия для проверки
+     * @param conditionMet результат проверки условия
+     */
     private void checkAndUpdateCondition(Map<String, Boolean> conditions, ArticlePage article, 
                                        String conditionName, boolean conditionMet) {
         if (!conditions.get(conditionName) && conditionMet) {

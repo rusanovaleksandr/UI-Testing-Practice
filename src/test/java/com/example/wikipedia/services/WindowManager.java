@@ -2,8 +2,18 @@ package com.example.wikipedia.services;
 
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
+/**
+ * Класс для управления окнами и прокруткой страниц.
+ * Содержит методы для выполнения действий, связанных с прокруткой
+ * страницы до определенных элементов.
+ */
 public class WindowManager {
-    public void scrollToFooter(){
+    
+    /**
+     * Прокручивает страницу до нижней части, где находится блок языков.
+     * Если блок языков не найден, прокручивает страницу до самого низа.
+     */
+    public void scrollToFooter() {
         executeJavaScript("""
             const langBlock = document.querySelector('#p-lang, .interlanguage-list');
             if (langBlock) {

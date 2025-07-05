@@ -3,6 +3,7 @@ package com.example.wikipedia.tests;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
+
 import com.example.wikipedia.pages.ArticlePage;
 import com.example.wikipedia.services.TestDataLoader;
 
