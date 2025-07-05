@@ -4,11 +4,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 import com.codeborne.selenide.Configuration;
+import static com.codeborne.selenide.FileDownloadMode.FOLDER;
 import static com.codeborne.selenide.Selenide.open;
 import com.example.wikipedia.pages.MainPage;
 import com.example.wikipedia.services.AuthService;
-
-import static com.codeborne.selenide.FileDownloadMode.FOLDER;
 
 public class BaseTest {
     protected MainPage mainPage; 
