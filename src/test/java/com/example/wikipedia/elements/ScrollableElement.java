@@ -5,6 +5,10 @@ public abstract class ScrollableElement extends BaseElement {
         super(selector);
     }
 
+    public ScrollableElement(String locator, boolean isXpath) {
+        super(locator, isXpath);
+    }
+
     public void scrollTo() {
         element.scrollTo();
     }

@@ -1,15 +1,23 @@
 package com.example.wikipedia.elements;
 
 public class InputElement extends BaseElement {
-    public InputElement(String selector) {
-        super(selector);
+    public InputElement(String selector, boolean xpath) {
+        super(selector, xpath);
     }
 
-    public void setValue(String text) {
+    public void fill(String text) {
         element.setValue(text);
     }
 
     public void clear() {
         element.clear();
+    }
+
+    public static InputElement byId(String id){
+        return new InputElement(String.format(ID_XPATH, id), true);
+    }
+
+    public static InputElement byName(String name){
+        return new InputElement(String.format(NAME_XPATH, name), true);
     }
 }

@@ -21,7 +21,7 @@ public class WatchButtonTest extends BaseTest {
         } else{
             articlePage.waitUntilUnwatchButtonIsVisible();
         }
-        
+
         assertNotEquals(wasActive, articlePage.isArticleWatched());
     }
 }

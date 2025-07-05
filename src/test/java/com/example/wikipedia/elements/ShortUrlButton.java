@@ -2,26 +2,16 @@ package com.example.wikipedia.elements;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class ShortUrlButton extends BaseElement {
-    private static final String DEFAULT_CSS_SELECTOR = "#t-urlshortener";
-
-    public ShortUrlButton(String selector) {
-        super(selector);
-    }
-    
-    public boolean isAvailable() {
-        return element.exists() && element.isDisplayed();
-    }
-    
-    public void clickAndOpenDialog() {
-        element.click();
+public class ShortUrlButton extends InteractiveElement {
+    public ShortUrlButton(String selector, boolean xpath) {
+        super(selector, xpath);
     }
 
     public String getShortUrlFromDialog() {
         return $(".oo-ui-inputWidget-input").getAttribute("value");
     }
 
-    public static ShortUrlButton byDefault() {
-        return new ShortUrlButton(DEFAULT_CSS_SELECTOR);
+    public static ShortUrlButton byId(String id){
+        return new ShortUrlButton(String.format(ID_XPATH, id), true);
     }
 }

@@ -14,4 +14,8 @@ public class CiteButton extends BaseElement {
     public boolean isAvailable() {
         return element.exists() && element.isDisplayed();
     }
+
+    public void click() {
+        element.click();
+    }
 }
