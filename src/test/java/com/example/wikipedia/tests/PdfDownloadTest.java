@@ -1,13 +1,16 @@
 package com.example.wikipedia.tests;
 
-import com.example.wikipedia.pages.ArticlePage;
-import com.example.wikipedia.pages.PdfDownloadPage;
-import com.example.wikipedia.services.TestDataLoader;
-import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+
+import com.example.wikipedia.pages.ArticlePage;
+import com.example.wikipedia.pages.PdfDownloadPage;
+import com.example.wikipedia.services.TestDataLoader;
 
 public class PdfDownloadTest extends BaseTest {
     private static final String TEST_ARTICLE_KEY = "test11_has_pdf";
@@ -23,7 +26,6 @@ public class PdfDownloadTest extends BaseTest {
         ArticlePage articlePage = mainPage.openArticle(articleName);
 
         assertTrue(articlePage.hasPdfDownload(), "Нет кнопки Скачать как PDF");
-
 
         // Открываем страницу экспорта PDF
         PdfDownloadPage pdfDownloadPage = articlePage.openPdfDownload();
