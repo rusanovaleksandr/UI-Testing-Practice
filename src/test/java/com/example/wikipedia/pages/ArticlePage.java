@@ -1,20 +1,18 @@
 package com.example.wikipedia.pages;
 
-import java.io.File;
 import java.time.Duration;
 
-import com.codeborne.selenide.SelenideElement;
-import com.example.wikipedia.elements.ArticleTitleElement;
-import com.example.wikipedia.elements.FollowButton;
-import com.example.wikipedia.elements.InteractiveElement;
-import com.example.wikipedia.elements.GalleryCloseButton;
-import com.example.wikipedia.elements.LanguageSwitchButton;
-import com.example.wikipedia.elements.ArticleSection;
-import com.example.wikipedia.elements.ShortUrlButton;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
-import com.example.wikipedia.elements.BackToTextButton;
+import com.codeborne.selenide.SelenideElement;
+import com.example.wikipedia.elements.ArticleSection;
+import com.example.wikipedia.elements.ArticleTitleElement;
+import com.example.wikipedia.elements.FollowButton;
 import com.example.wikipedia.elements.FootnoteElement;
+import com.example.wikipedia.elements.GalleryCloseButton;
+import com.example.wikipedia.elements.InteractiveElement;
+import com.example.wikipedia.elements.LanguageSwitchButton;
+import com.example.wikipedia.elements.ShortUrlButton;
 
 
 public class ArticlePage extends BasePage {
@@ -32,7 +30,7 @@ public class ArticlePage extends BasePage {
     private final SelenideElement referencesHeader = $x("//h2[contains(., 'Ссылки')]");
     private final SelenideElement referencesListContainer =
             $x("//h2[contains(., 'Ссылки')]//following::ul[1]");
-    private final BackToTextButton backToTextButton = BackToTextButton.byDefault();
+    private final InteractiveElement backToTextButton = InteractiveElement.byTitle("Обратно к тексту");
     private final FootnoteElement footnote = FootnoteElement.byFootnoteNumber("1");
 
     public String getArticleTitle() {
