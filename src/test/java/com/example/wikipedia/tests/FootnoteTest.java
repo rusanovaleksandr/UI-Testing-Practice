@@ -21,7 +21,6 @@ public class FootnoteTest extends BaseTest {
 
         // Шаги теста
         ArticlePage articlePage = mainPage.openArticle(articleName);
-        //ArticlePage articlePage = mainPage.openRandomArticle();
 
         // 1. Проверка кликабельности сноски
         articlePage.clickFootnote();

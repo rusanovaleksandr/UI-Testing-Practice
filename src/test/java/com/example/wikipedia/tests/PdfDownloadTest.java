@@ -14,7 +14,6 @@ import com.example.wikipedia.services.TestDataLoader;
 
 public class PdfDownloadTest extends BaseTest {
     private static final String TEST_ARTICLE_KEY = "test11_has_pdf";
-    private static final String DOWNLOAD_DIR = "target/downloads";
 
     @Test
     void shouldDownloadPdfCorrectly() {

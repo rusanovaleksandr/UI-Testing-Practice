@@ -18,7 +18,6 @@ public class LanguageSwitchTest extends BaseTest{
 
         // Перейти на статью
         ArticlePage articlePage = mainPage.openArticle(articleName);
-        //ArticlePage articlePage = mainPage.openRandomArticle();
 
         // Проверка 1: Ссылка "English" доступна
         assertTrue(articlePage.hasEnglishVersion());
@@ -32,7 +31,6 @@ public class LanguageSwitchTest extends BaseTest{
                 "URL должен содержать en.wikipedia.org. Фактический URL: " + currentUrl);
 
         // Проверка 3: Заголовок сохранился (с учетом перевода)
-        String originalTitle = articlePage.getArticleTitle();
         String translatedTitle = enArticlePage.getArticleTitle();
         assertNotNull(translatedTitle, "Заголовок на английском отсутствует");
 
