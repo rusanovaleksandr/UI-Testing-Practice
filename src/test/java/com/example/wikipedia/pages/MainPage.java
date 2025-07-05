@@ -12,7 +12,7 @@ public class MainPage extends BasePage {
     private final UserIcon userIcon = UserIcon.byId("pt-userpage");
 
     public MainPage() {
-        super("https://ru.wikipedia.org/wiki/Главная_страница");
+        super();
     }
 
     public ArticlePage openRandomArticle() {
