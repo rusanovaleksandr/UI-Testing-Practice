@@ -12,4 +12,8 @@ public class CitationHeading extends BaseElement {
     public String getText() {
         return element.shouldBe(visible).getText();
     }
+
+    public static CitationHeading byDefault(){
+        return new CitationHeading();
+    }    
 }

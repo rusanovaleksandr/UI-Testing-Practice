@@ -1,10 +1,8 @@
 package com.example.wikipedia.pages;
 
-import com.codeborne.selenide.Selenide;
 import static com.codeborne.selenide.Selenide.title;
-import com.example.wikipedia.services.WindowManager;
-
 import static com.codeborne.selenide.WebDriverRunner.url;
+import com.example.wikipedia.services.WindowManager;
 
 
 public abstract class BasePage {

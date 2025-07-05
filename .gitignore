@@ -2,3 +2,4 @@
 .env
 /target
 /build
+/src/test/resources

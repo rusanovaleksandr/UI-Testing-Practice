@@ -9,12 +9,12 @@ public class DownloadButton extends BaseElement {
         super(selector, xpath);
     }
 
-    public static DownloadButton byText(String id) {
-        return new DownloadButton(String.format(TEXT_XPATH, id), true);
-    }
-
     public File downloadPdf() {
         return element.download();
+    }
+
+    public static DownloadButton byText(String id) {
+        return new DownloadButton(String.format(TEXT_XPATH, id), true);
     }
 
 }
