@@ -9,7 +9,7 @@ import java.util.Map;
  * Содержит методы для доступа к тестовым данным, используемым в тестах.
  */
 public class TestDataLoader {
-    private static final String TEST_DATA_PATH = "src/test/resources/tcst-data.json";
+    private static final String TEST_DATA_PATH = "src/test/resources/test-data.json";
     private static Map<String, String> testData;
 
     static {
