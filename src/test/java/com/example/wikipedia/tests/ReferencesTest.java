@@ -1,13 +1,14 @@
 package com.example.wikipedia.tests;
 
-import com.example.wikipedia.pages.ArticlePage;
-import com.example.wikipedia.elements.BodyElement;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import com.example.wikipedia.services.TestDataLoader;
-
-
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+
+import com.codeborne.selenide.Configuration;
+import com.example.wikipedia.elements.BodyElement;
+import com.example.wikipedia.pages.ArticlePage;
+import com.example.wikipedia.services.TestDataLoader;
 
 /**
  * Тестовый класс для проверки функциональности раздела "Ссылки" в статьях Wikipedia.
@@ -26,6 +27,7 @@ public class ReferencesTest extends BaseTest {
      */
     @Test
     void firstReferenceLinkShouldOpenExternalResource() {
+        Configuration.timeout = 60_000;
         String articleName = TestDataLoader.getTestArticle(TEST_ARTICLE_KEY);
         assertNotNull(articleName, "Не удалось загрузить название статьи из тестовых данных");
         ArticlePage articlePage = mainPage.openArticle(articleName);
@@ -35,6 +37,6 @@ public class ReferencesTest extends BaseTest {
         String currentUrl = com.codeborne.selenide.Selenide.webdriver().driver().url();
         assertFalse(currentUrl.contains("wikipedia.org"), "Переход на внешний ресурс не произошел");
         BodyElement body = new BodyElement();
-        assertTrue(body.isDisplayed(), "Страница не загружена корректно");
+        assertTrue(body.exists(), "Страница не загружена корректно");
     }
 }

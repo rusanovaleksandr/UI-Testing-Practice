@@ -15,6 +15,8 @@
         <junit.version>5.10.0</junit.version>
         <webdrivermanager.version>5.6.3</webdrivermanager.version>
         <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+        <slf4j.version>2.0.12</slf4j.version>
+        <selenium.version>4.18.1</selenium.version>
     </properties>
 
     <dependencies>
@@ -61,6 +63,15 @@
             <artifactId>dotenv-java</artifactId>
             <version>3.0.0</version>
         </dependency>
+
+        <!-- SLF4J NOP (для тишины) -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -81,6 +92,12 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <!-- Отключаем логи Selenium -->
+                        <webdriver.chrome.silentOutput>true</webdriver.chrome.silentOutput>
+                    </systemPropertyVariables>
+                </configuration>
             </plugin>
 
             <!-- Генерация отчетов Allure-->

@@ -9,7 +9,7 @@ public class LanguageSwitchButton extends InteractiveElement {
     /**
      * XPath шаблон для поиска элементов по атрибуту lang
      */
-    private static final String LANG_XPATH = "//*[@lang='%s' and contains(@class,'interlanguage-link-target')]";
+    private static final String LANG_XPATH = "//a[@lang='%s' and contains(@class,'interlanguage-link-target')]";
 
     /**
      * Конструктор для создания кнопки переключения языка.
