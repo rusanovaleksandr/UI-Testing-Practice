@@ -26,19 +26,13 @@ public class FootnoteTest extends BaseTest {
     void footnoteShouldWorkCorrectly() {
         String articleName = TestDataLoader.getTestArticle(TEST_ARTICLE_KEY);
         assertNotNull(articleName, "Не удалось загрузить название статьи");
-
         ArticlePage articlePage = mainPage.openArticle(articleName);
-
         articlePage.clickFootnote();
-
         assertTrue(articlePage.urlContainsAnchor(EXPECTED_ANCHOR),
                 "URL должен содержать якорь " + EXPECTED_ANCHOR);
-
         assertTrue(articlePage.isBackToTextButtonVisible(),
                 "Кнопка возврата должна отображаться");
-
         articlePage.clickBackToTextButton();
-
         assertFalse(articlePage.urlContainsAnchor(EXPECTED_ANCHOR),
                 "URL не должен содержать якорь после возврата");
         assertTrue(articlePage.urlContainsAnchor(BACK_ANCHOR),

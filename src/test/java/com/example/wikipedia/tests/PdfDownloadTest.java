@@ -29,20 +29,14 @@ public class PdfDownloadTest extends BaseTest {
     void shouldDownloadPdfCorrectly() {
         String articleName = TestDataLoader.getTestArticle(TEST_ARTICLE_KEY);
         assertNotNull(articleName, "Название статьи не загружено");
-
         ArticlePage articlePage = mainPage.openArticle(articleName);
-
         assertTrue(articlePage.hasPdfDownload(), "Нет кнопки Скачать как PDF");
-
         PdfDownloadPage pdfDownloadPage = articlePage.openPdfDownload();
-
         File downloadedFile = pdfDownloadPage.downloadPdf();
-
         assertNotNull(downloadedFile, "Файл не загружен");
         assertTrue(downloadedFile.exists(), "Файл не существует");
         assertTrue(downloadedFile.length() > 0, "Файл пустой");
         assertTrue(isPdfValid(downloadedFile), "Невалидный PDF");
-
     }
 
     private boolean isPdfValid(File file) {
